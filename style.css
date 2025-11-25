@@ -1,0 +1,180 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+}
+
+aside {
+    background-color: rgb(41, 41, 41);
+    height: 100vh;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+aside .logo {
+    color: rgb(216, 216, 216);
+    padding: 1rem;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li a {
+    display: flex;
+    text-decoration: none;
+    color: rgb(201, 201, 201);
+    padding: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: ease-in-out 300ms;
+}
+
+aside ul li a:hover {
+    background-color: rgb(31, 31, 31);
+    transition: ease-in-out 300ms;
+    color: white;
+}
+
+aside ul li a.ativo {
+    background-color: rgb(53, 53, 53);
+    color: white;
+}
+
+main {
+    background-color: rgb(146, 146, 146);
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-tarefas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(206, 206, 206);
+    padding: 1.5rem;
+    background-color: rgb(53, 53, 53);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    gap: 1rem;
+}
+
+.container-tarefas h1 {
+    color: whitesmoke;
+}
+
+.container-tarefas form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.label-tarefa {
+    color: whitesmoke;
+}
+
+.input-tarefa {
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.2rem;
+    border: none;
+    resize: none;
+}
+
+.adicionar-tarefa {
+    padding: 0.8rem;
+    width: 100%;
+    background-color: rgb(94, 201, 94);
+    border-radius: 0.2rem;
+    border: none;
+    cursor: pointer;
+    transition: ease-in-out 200ms;
+}
+
+.adicionar-tarefa:hover {
+    background-color: rgb(57, 121, 57);
+    transition: ease-in-out 200ms;
+}
+
+.tabela-tarefas {
+    border-collapse: collapse;
+    width: 100%;
+    color: aliceblue;
+}
+
+th,
+td {
+    border: 1px solid whitesmoke;
+    padding: 8px;
+    text-align: left;
+}
+
+.td-checkbox{
+    text-align: center;
+    width: 32px;
+}
+
+.td-checkbox input{
+    width: 24px;
+    height: 24px;
+}
+
+td button {
+    width: 100%;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: ease-in-out 200ms;
+    border: none;
+    border-radius: 0.2rem;
+}
+
+td button:hover{
+    transition: ease-in-out 200ms;
+}
+
+td button.editar{
+    background-color: rgb(230, 195, 119);
+}
+
+td button.editar:hover{
+    background-color: rgb(180, 146, 73);
+}
+
+td button.deletar{
+    background-color: rgb(233, 142, 142);
+}
+
+td button.deletar:hover{
+    background-color: rgb(194, 69, 69);
+}

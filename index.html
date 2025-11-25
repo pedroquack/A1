@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Tarefas</title>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>TAREFAS POSITIVO</h1>
+        </div>
+        <ul>
+            <li><a href="./index.html" class="ativo">Tarefas</a></li>
+            <li><a href="./instrucoes.html">Instruções</a></li>
+        </ul>
+    </aside>
+    <main>
+        <div class="container-tarefas">
+            <h1>Minhas Tarefas</h1>
+            <form id="form-tarefa" method="POST">
+                <input type="hidden" name="id-tarefa" id="input-id-tarefa">
+                <div class="form-group">
+                    <label class="label-tarefa" for="titulo">Titulo</label>
+                    <input maxlength="30" required type="text" id="input-titulo" name="titulo" class="input-tarefa"
+                        placeholder="Limpar a casa">
+                </div>
+                <div class="form-group">
+                    <label class="label-tarefa" for="descricao">Descrição</label>
+                    <textarea maxlength="100" name="descricao" required type="text" id="input-descricao"
+                        class="input-tarefa"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="label-tarefa" for="data">Data</label>
+                    <input type="date" name="data" id="input-data" class="input-tarefa">
+                </div>
+                <button class="adicionar-tarefa" id="botao-form" type="submit">Adicionar</button>
+            </form>
+            <table class="tabela-tarefas" id="tarefas">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Tarefa</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-body">
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+<script src="./scripts.js"></script>
+
+</html>
