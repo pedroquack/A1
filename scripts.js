@@ -46,6 +46,7 @@ formTarefa.addEventListener('submit', (event) => {
         tarefas[index].data = data;
 
         botaoForm.textContent = "Adicionar";
+        botaoForm.classList.replace("botaoAmarelo", "botaoVerde")
     }
 
     formTarefa.reset();
@@ -62,12 +63,13 @@ function carregarTarefas() {
     body.innerHTML = ''
     tarefas.forEach(tarefa => {
         const concluida = tarefa.concluido ? 'checked' : '';
+        const dataFormatada = new Date(tarefa.data + "T00:00:00").toLocaleDateString('pt-br');
         const novaLinha = `
         <tr id="${tarefa.id}">
             <td class="td-checkbox"><input type="checkbox" onchange="checkTarefa(event)" name="checkbox" id="checkbox-${tarefa.id}" ${concluida}></td>
             <td>${tarefa.titulo}</td>
             <td>${tarefa.descricao}</td>
-            <td>${tarefa.data}</td>
+            <td>${dataFormatada}</td>
             <td><button class="editar" onclick="editarTarefa(event)"><span class="material-symbols-outlined">edit</span></button></td>
             <td><button class="deletar" onclick="excluirTarefa(event)"><span class="material-symbols-outlined">delete</span></button></td>
         </tr>
@@ -94,6 +96,7 @@ function editarTarefa(event) {
     }
 
     botaoForm.textContent = "Editar"
+    botaoForm.classList.replace("botaoVerde", "botaoAmarelo")
 
     inputIdTarefa.value = tarefa.id;
     inputTitulo.value = tarefa.titulo;
@@ -112,6 +115,6 @@ function excluirTarefa(event) {
 
 window.onload = function () {
     const tarefasStorage = localStorage.getItem('tarefas');
-    tarefas = JSON.parse(tarefasStorage);
+    tarefas = JSON.parse(tarefasStorage) || [];
     carregarTarefas();
 }
